@@ -48,7 +48,16 @@ public class CharacterService {
     public List<Character> getCharacterByRegion(String region){
         return characterRepository.findByRegionContainingIgnoreCase(region);
     }
+
     public List<Character> getCharacterByRole(String role){
         return characterRepository.findByRole(role);
+    }
+    
+    public List<Character> getAllCharactersSortedByRegion() {
+        return characterRepository.findAllByOrderByRegionAsc();
+    }
+
+    public List<Character> getAllCharactersSortedByRole() {
+        return characterRepository.findAllByOrderByRoleAsc();
     }
 }

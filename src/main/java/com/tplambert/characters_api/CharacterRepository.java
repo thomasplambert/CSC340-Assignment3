@@ -8,4 +8,6 @@ public interface CharacterRepository extends JpaRepository<Character, Long>{
     List<Character> findByNameContainingIgnoreCase(String name);
     List<Character> findByRegionContainingIgnoreCase(String region);
     List<Character> findByRole(String role);
+    List<Character> findAllByOrderByRegionAsc();
+    List<Character> findAllByOrderByRoleAsc();
 }
