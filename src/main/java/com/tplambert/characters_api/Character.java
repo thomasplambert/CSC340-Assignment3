@@ -84,7 +84,7 @@ public class Character{
         return this.role;
     }
 
-    public long getId(){
+    public long getCharacterId(){
         return this.characterId;
     }
 }

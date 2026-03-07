@@ -76,10 +76,11 @@ public class CharacterAPIController {
    */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> removeCharacter(@PathVariable Long id){
-        characterService.deleteCharacter(id);
+        
         if (characterService.getCharacterById(id) == null){
             return ResponseEntity.notFound().build();
         }
+        characterService.deleteCharacter(id);
         return ResponseEntity.noContent().build();
     }
 
